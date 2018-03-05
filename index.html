@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Hangman</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <link rel="stylesheet" href="assets/css/style.css"
    type:"text/css">
    <link href="https://fonts.googleapis.com/css?family=Pacifico|Special+Elite" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -36,15 +32,15 @@
             <div class="well well-sm">
             The Artist is:
             <br> 
-            JS pending
-            </div>
+              <span id="placeholders">--------</span>
+          </div>
             <div class="well well-sm">
             Incorrect Guesses: 
             <br>
-            JS pending
-            </div>
+              <span id="guessed">--------</span>
+          </div>
             <div class="well well-sm">
-            Guesses Left: 7
+            Guesses Left: <span id="guessesLeft">7</span>
             </div>
           </div>
           </div><!--end JS FB column-->
@@ -55,13 +51,16 @@
         <h2>Who Crafted This Creation?!?</h2>
       </div>
         <hr class="my-4">
-        Art Images Will Load Here via JS Array
+        <div class="well artImageContainer">
+          <img id="artImg" src="assets/images/landingart.jpg" alt="Image of Art">
+        </div>
       </div><!--End Who Made This Section-->
       <div class="col-xs-4 col-md-3 rightSubWrapper">
         <div class="card">
-              <img class="card-img-top" src="assets/images/VanGogh7.jpg" alt="Card image cap">
+              <img class="card-img-top" id="vanGoghImg" src="assets/images/VanGogh7.jpg" alt="Card image cap">
               <div class="card-block">
-                <p class="card-text well">This will load dynamically based on guesses left in JS, as will the image above</p>
+                <div class="card-text well" id="vanGoghSays">Van Gogh Says:</div>
+                <div class="card-text well" id="hangManSays">The Game Says:</div>
               </div>
         </div>      
       </div><!--end rightSubWrapper-->
@@ -69,18 +68,20 @@
   </div><!--end mainContentWrapper-->
   <div class="wrapper subContentWrapper">
     <div class="row align-items subContentRow">
-      <div class="col-12 col-md-3 subContent">
+      <div class="col-12 col-md-3 subContent" id="hintBox">
         <p>Hint: This will dynamically load a hint based on the image selected from the main array</p>
       </div><!-- end hint-->
       
       <div class="col-12 col-md-3 subContent">
-          <p>Wins: JS Report of total wins here</p>
+          <p>Wins: <span id="wins">0</span></p>
       </div><!-- end wins-->
       <div class="col-12 col-md-3 subContent">
-          <p>Losses: JS Report of total losses here</p>
+          <p>Losses: <span id="losses">0</span></p>
       </div><!-- end losses-->
       <div class="col-12 col-md-3 subContent">
-          Build Button to restart game Here
+        <button class="btn btn-primary" id="newGameButton">
+          Start A New Game!
+        </button>
       </div><!-- end new button-->
     </div><!-- end subContentRow -->
   </div><!--end subContentWrapper-->
@@ -107,7 +108,9 @@
     </div><!--end container-->
   </div> <!--end jumbotron-->
 
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="./assets/javascript/game.js"></script>
 
 
 </body>

@@ -34,8 +34,12 @@ body {
   text-align:center;
 }
 
+.artImageContainer img{
+  width:50%;
+}
+
 .card {
-  margin-top:20px;
+  margin-top:30%;
 }
 
 .card-img-top {
@@ -44,13 +48,16 @@ body {
   margin-right:auto;
   width: 70%;
   height: auto;
-  margin-top:42%;
   margin-bottom:42px;
 }
 
 .subContentWrapper {
   background-image: url("../images/brushed.png");
   text-align:center;
+}
+
+.subContent {
+  margin-top: 25px;
 }
 
 .footer {
