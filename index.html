@@ -18,32 +18,42 @@
 
 <body>
   <div class="page-header headerBlock">
-    <h1>Guess that Artist!</h1>
+    <h1>Guess that Artist--</h1>
     <h2>Or Van Gogh Loses His Ear!!</h2>
   </div><!--end page header-->
   <div class="wrapper mainContentWrapper">
     <div class="row mainContentRow">
       <div class="col-xs-12 col-md-3 leftSubWrapper">
           <div class="leftSubWrapperCol">
+            <div class=row>
+              <div class="well col-xs-6 col-md-12">
             <p>
               <strong>Rules:</strong>
               A hangman style game to brush up on your art history!  Guess the artist of the painting before you make Van Gogh lose his ear!  Since he is already a bit mad, it only takes seven hacks for him to get that ear off!
             </p>
           </div><!--end rules column-->
-          <div class="leftSubWrapperCol">
-            <p>
-            The Artist is: JS pending
+          <div class="jSFB col-xs-6 col-md-12">
+            <div class="well well-sm">
+            The Artist is:
+            <br> 
+            JS pending
+            </div>
+            <div class="well well-sm">
+            Incorrect Guesses: 
             <br>
-            <br>
-            Incorrect Guesses: JS pending
-            <br>
-            <br>
-            Guesses Left: JS Pending
-            </p>
+            JS pending
+            </div>
+            <div class="well well-sm">
+            Guesses Left: 7
+            </div>
+          </div>
           </div><!--end JS FB column-->
+        </div>
       </div><!--end leftSubWrapper-->
       <div class="jumbotron col-xs-8 col-md-6">
-        <h2>Who Made This?</h2>
+        <div class="well">
+        <h2>Who Crafted This Creation?!?</h2>
+      </div>
         <hr class="my-4">
         Art Images Will Load Here via JS Array
       </div><!--End Who Made This Section-->
@@ -51,7 +61,7 @@
         <div class="card">
               <img class="card-img-top" src="assets/images/VanGogh.jpg" alt="Card image cap">
               <div class="card-block">
-                <p class="card-text">This will load dynamically based on guesses left in JS</p>
+                <p class="card-text well">This will load dynamically based on guesses left in JS</p>
               </div>
         </div>      
       </div><!--end rightSubWrapper-->
@@ -62,6 +72,7 @@
       <div class="col-12 col-md-3 subContent">
         <p>Hint: This will dynamically load a hint based on the image selected from the main array</p>
       </div><!-- end hint-->
+      
       <div class="col-12 col-md-3 subContent">
           <p>Wins: JS Report of total wins here</p>
       </div><!-- end wins-->

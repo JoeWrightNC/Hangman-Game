@@ -18,19 +18,22 @@ body {
 }
 
 .leftSubWrapperCol {
-  padding:7%;
-  margin-left:20px;
-  margin-right:10px;
+  width:70%;
+  margin-top:15%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-.leftSubWrapperCol p {
-  background-color:lightgray
+.jSFB {
+  margin-top:15%;
+  margin-bottom:15%;
 }
 
 .jumbotron {
   background-color:transparent;
   text-align:center;
 }
+
 .card {
   margin-top:20px;
 }
@@ -41,6 +44,8 @@ body {
   margin-right:auto;
   width: 70%;
   height: auto;
+  margin-top:42%;
+  margin-bottom:42px;
 }
 
 .subContentWrapper {
