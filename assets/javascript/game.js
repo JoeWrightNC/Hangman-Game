@@ -53,6 +53,43 @@ function newGame() {
         selectedWordArr.push("-");
       }
     }
+  if (pickedWord.toLowerCase() === "basquiat") {
+    artImg.src = "./assets/images/basquiat.jpg";
+    hintBox.textContent = "This artist rose to fame through his friendship with Andy Wawrhol!";
+  }
+  else if (pickedWord.toLowerCase() === "monet") {
+    $artImg.src = "./assets/images/monet.jpg";
+    hintBox.textContent = "After an art exhibition in 1874, a critic insultingly dubbed his painting style 'Impressionism' since it was more concerned with form and light than realism.";
+  }
+  else if (pickedWord.toLowerCase() === "munch") {
+    $artImg.src = "./assets/images/munch.jpg";
+    hintBox.textContent = "I'm best known for 'the scream', though noone reads my poem I wrote to go with it!";
+  }
+  else if (pickedWord.toLowerCase() === "max beckmann") {
+    $artImg.src = "./assets/images/beckmann.png";
+    hintBox.textContent = "I was called a 'cultural Bolshevik' and dismissed from teaching at the Frankfurt Art School by the Nazis.";
+  }
+  else if (pickedWord.toLowerCase() === "andy warhol") {
+    $artImg.src = "./assets/images/warhol.jpg";
+    hintBox.textContent = "I invented pop art. Like it or hate it, I changed everything forever.";
+  }
+  else if (pickedWord.toLowerCase() === "jackson pollock") {
+    $artImg.src = "./assets/images/pollock.jpg";
+    hintBox.textContent = "splatter splatter splatter splatter ugh you just don't get me";
+  }
+  else if (pickedWord.toLowerCase() === "kehinde wiley") {
+    $artImg.src = "./assets/images/wiley.jpg";
+    hintBox.textContent = "I painted President Obama's official portrait!";
+  }
+  else if (pickedWord.toLowerCase() === "picasso") {
+    $artImg.src = "./assets/images/picasso.jpg";
+    hintBox.textContent = "Many folks credit me with cubism but miss out on the fact I had many groundbreaking periods of art before that era!";
+  }
+  else if (pickedWord.toLowerCase() === "dali") {
+    $artImg.src = "./assets/images/dali.jpg";
+    hintBox.textContent = "Your ex probably has a tattoo of my signature sky elephants somewhere";
+  }
+
   $vanGoghImg.src = "./assets/images/VanGogh7.jpg"
   $guessesLeft.textContent = guessesLeft;
   $placeholders.textContent = selectedWordArr.join("");
