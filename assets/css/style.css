@@ -61,6 +61,8 @@ body {
 }
 
 .footer {
+  height: 50px;
+  padding-top: 15px;
   background-image:url("../images/marble.jpg");
   text-align:center;
 }
