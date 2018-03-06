@@ -20,48 +20,56 @@ var losses = 0;
 var guessesLeft = 7;
 var gameRunning = false;
 var pickedWord = "";
-var selecteddWordArr = [];
+var selectedWordArr = [];
 var guessedBank = [];
 var wrongBank = [];
 var vanGoghSays = "I'm going to do it, I'm going to cut off my ear for love"
 
-//art image functionality
+//events and listeners
+$newGameButton.addEventListener('click', newGame)
 
+document.onkeyup = function(e) {
+  if(e.keyCode >=65 && e.keyCode <= 90) {
+    letterGuess(e.key);
+  }
+  else {
+    $hangManSays.textContent = "That isn't a letter!";
+  }
+}
 
-//newgame function
+//game functions
 function newGame() {
   gameRunning = true;
   guessesLeft = 7;
   guessedBank = [];
   wrongBank = [];
-  selecteddWordArr = [];
+  selectedWordArr = [];
   pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     for (var i = 0; i < pickedWord.length; i++) {
       if (pickedWord[i] === " ") {
-        selecteddWordArr.push(" ");
+        selectedWordArr.push(" ");
         }
       else {
-        selecteddWordArr.push("-");
+        selectedWordArr.push("-");
       }
     }
   $vanGoghImg.src = "./assets/images/VanGogh7.jpg"
   $guessesLeft.textContent = guessesLeft;
-  $placeholders.textContent = selecteddWordArr.join("");
+  $placeholders.textContent = selectedWordArr.join("");
   $guessed.textContent = wrongBank;
   $vanGoghSays.textContent = "I'm going to do it, I'm going to cut off my ear for love";
 }
 
-//letter guess function
 function letterGuess(letter) {
   if (gameRunning === true && guessedBank.indexOf(letter) === -1) {
     guessedBank.push(letter);
     for (var i = 0; i < pickedWord.length; i++) {
       if (pickedWord[i].toLowerCase() === letter.toLowerCase()) {
-        selecteddWordArr[i] = pickedWord[i];
+        selectedWordArr[i] = pickedWord[i];
          $hangManSays.textContent = "The Game Says: Good Job!";
       }
     }
-    $placeholders.textContent = selecteddWordArr.join('')
+    $placeholders.textContent = selectedWordArr.join('')
     letterWrong(letter)
   }
   else {
@@ -74,9 +82,8 @@ function letterGuess(letter) {
   }
 }
 
-//check incorrect
 function letterWrong(letter) {
-  if (selecteddWordArr.indexOf(letter.toLowerCase()) === -1 && selecteddWordArr.indexOf(letter.toUpperCase()) === -1) {
+  if (selectedWordArr.indexOf(letter.toLowerCase()) === -1 && selectedWordArr.indexOf(letter.toUpperCase()) === -1) {
     guessesLeft--;
     wrongBank.push(letter);
     $guessed.textContent = wrongBank.join(" ");
@@ -112,7 +119,6 @@ function letterWrong(letter) {
 
 function checkLose() {
   if (guessesLeft === 0) {
-    console.log("you lose")
     losses++;
     gameRunning= false;
     $losses.textContent = losses;
@@ -120,28 +126,17 @@ function checkLose() {
     $vanGoghSays.textContent = "I SHOULD HAVE JUST GOTTEN HER NAME TATTOOED ON ME LIKE MY MATE SAID THIS WAS STUPID";
     $hangManSays.textContent  = "You Lose, But Try Again! Press the Start A New Game button below";
   }
+  else {
   checkWin() ;
+  }
 }
 function checkWin() {
-  if (pickedWord.toLowerCase() === selecteddWordArr.join().toLowerCase) {
-    console.log("you win")
+  if (pickedWord.toLowerCase() === selectedWordArr.join("").toLowerCase()) {
     wins++;
     gameRunning: false;
     $wins.textContent = wins;
-    $vanGoghImg.src = "./assets/images/VanGogh.jpg";
     $vanGoghSays.textContent = "Ugh, I can't believe I started to cut my ear off and can't even go through with it, so lame";
     $hangManSays.textContent  = "You Win; Press Start A New Game to Play Again!";
-  }
-}
-
-$newGameButton.addEventListener('click', newGame)
-
-document.onkeyup = function(e) {
-  if(e.keyCode >=65 && e.keyCode <= 90) {
-    letterGuess(e.key);
-  }
-  else {
-    $hangManSays.textContent = "That isn't a letter!";
   }
 }
 
