@@ -28,16 +28,6 @@ var vanGoghSays = "I'm going to do it, I'm going to cut off my ear for love"
 //events and listeners
 $newGameButton.addEventListener('click', newGame)
 
-document.onkeyup = function(e) {
-  if(e.keyCode >=65 && e.keyCode <= 90) {
-    letterGuess(e.key);
-  }
-  else {
-    $hangManSays.textContent = "That isn't a letter!";
-  }
-}
-
-//game functions
 function newGame() {
   gameRunning = true;
   guessesLeft = 7;
@@ -50,7 +40,7 @@ function newGame() {
         selectedWordArr.push(" ");
         }
       else {
-        selectedWordArr.push("-");
+        selectedWordArr.push("_");
       }
     }
   if (pickedWord.toLowerCase() === "basquiat") {
@@ -95,6 +85,15 @@ function newGame() {
   $placeholders.textContent = selectedWordArr.join("");
   $guessed.textContent = wrongBank;
   $vanGoghSays.textContent = "I'm going to do it, I'm going to cut off my ear for love";
+}
+
+document.onkeyup = function(e) {
+  if(e.keyCode >=65 && e.keyCode <= 90) {
+    letterGuess(e.key);
+  }
+  else {
+    $hangManSays.textContent = "That isn't a letter!";
+  }
 }
 
 function letterGuess(letter) {
