@@ -67,3 +67,66 @@ body {
   background-image:url("../images/marble.jpg");
   text-align:center;
 }
+
+@media screen and (max-width:767px) and (min-width:1px) {
+  
+  .mainContentWrapper {
+    margin-top:-20px;
+    background-image:url("../images/spiration.png");
+    z-index:0;
+  }
+  
+  .leftSubWrapperCol {
+    width:85%;
+    margin-top:2%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .jSFB {
+    margin-top:2%;
+    margin-bottom:2%;
+  }
+
+  .jumbotron {
+    margin-top:-220px;
+  }
+  
+  .mobileHidden {
+    visibility: hidden;
+  }
+  
+  .artImageContainer img{
+    height:200px;
+    width:auto;
+  }
+  
+  .card {
+    margin-top:-60px;
+  }
+  
+  .card-img-top {
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 70%;
+    height: auto;
+    margin-bottom:22px;
+  }
+  
+  .subContentWrapper {
+    background-image: url("../images/brushed.png");
+    text-align:center;
+  }
+  
+  .subContent {
+    margin-top: 0px;
+    height: 40px;
+  }
+  
+  .footer {
+    height: 50px;
+    padding-top: 15px;
+    background-image:url("../images/marble.jpg");
+    text-align:center;
+  }

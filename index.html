@@ -22,7 +22,7 @@
       <div class="col-xs-12 col-md-3 leftSubWrapper">
           <div class="leftSubWrapperCol">
             <div class=row>
-              <div class="well col-xs-6 col-md-12">
+              <div class="well col-xs-12 col-md-12">
             <p>
               <strong>Rules:</strong>
               A hangman style game to brush up on your art history!  Guess the artist of the painting before you make Van Gogh lose his ear!  Since he is already a bit mad, it only takes seven hacks for him to get that ear off!
@@ -32,7 +32,7 @@
               2)Press any letter on your keyboard to guess!
             </p>
           </div><!--end rules column-->
-          <div class="jSFB col-xs-6 col-md-12">
+          <div class="jSFB col-xs-12 col-md-12">
             <div class="well well-sm">
             The Artist is:
             <br> 
@@ -50,23 +50,29 @@
           </div><!--end JS FB column-->
         </div>
       </div><!--end leftSubWrapper-->
-      <div class="jumbotron col-xs-8 col-md-6">
-        <div class="well">
+      <div class="jumbotron col-xs-12 col-md-6">
+        <div class="well mobileHidden">
         <h2>Who Crafted This Creation?!?</h2>
       </div>
-        <hr class="my-4">
+        <hr class="my-4 mobileHidden">
         <div class="well artImageContainer">
           <img id="artImg" src="assets/images/landingart.jpg" alt="Image of Art">
         </div>
       </div><!--End Who Made This Section-->
-      <div class="col-xs-4 col-md-3 rightSubWrapper">
+      <div class="col-xs-12 col-md-3 rightSubWrapper">
         <div class="card">
+          <div class="row">
+              <div class="col-xs-6 col-md-12">
               <img class="card-img-top" id="vanGoghImg" src="assets/images/VanGogh7.jpg" alt="Card image cap">
+            </div>
+              <div class="col-xs-6 col-md-12">
               <div class="card-block">
                 <div class="card-text well" id="vanGoghSays">Van Gogh Says:</div>
                 <div class="card-text well" id="hangManSays">The Game Says:</div>
               </div>
-        </div>      
+            </div>
+            </div>
+            </div>      
       </div><!--end rightSubWrapper-->
     </div><!--end mainContentRow-->
   </div><!--end mainContentWrapper-->
