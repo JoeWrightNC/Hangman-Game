@@ -1,6 +1,6 @@
 // Javascript
 
-//DOM Elements
+//DOM Elements to be interactive with game code
 var $newGameButton = document.getElementById("newGameButton");
 var $artImg = document.getElementById("artImg");
 var $placeholders = document.getElementById("placeholders");
@@ -13,7 +13,7 @@ var $hintBox = document.getElementById("hintBox");
 var $wins = document.getElementById("wins");
 var $losses = document.getElementById("losses");
 
-//variables
+//set initial variables to be used
 var wordBank = ["Basquiat", "Monet", "Munch", "Max Beckmann", "Andy Warhol", "Jackson Pollock", "Kehinde Wiley", "Picasso", "Dali"]
 var wins = 0;
 var losses = 0;
@@ -25,7 +25,7 @@ var guessedBank = [];
 var wrongBank = [];
 var vanGoghSays = "I'm going to do it, I'm going to cut off my ear for love"
 
-//events and listeners
+//when start game is clicked each time
 $newGameButton.addEventListener('click', newGame)
 
 function newGame() {
@@ -87,6 +87,7 @@ function newGame() {
   $vanGoghSays.textContent = "I'm going to do it, I'm going to cut off my ear for love";
 }
 
+//playing the game
 document.onkeyup = function(e) {
   if(e.keyCode >=65 && e.keyCode <= 90) {
     letterGuess(e.key);
@@ -110,7 +111,7 @@ function letterGuess(letter) {
   }
   else {
     if (gameRunning === false) {
-      $hangManSays.textContent = "The Game Says: Press the button below to start a game!";
+      $hangManSays.textContent = "The Game Says: Start a new game to play again!";
     }
     else {
       $hangManSays.textContent = "The Game Says: You've already guessed that letter!";
@@ -153,6 +154,7 @@ function letterWrong(letter) {
   checkLose() ;
 }
 
+//winning and losing
 function checkLose() {
   if (guessesLeft === 0) {
     losses++;
